@@ -9,5 +9,15 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('View Readme'){
+ 	  when {
+             branch "fix-*"
+	  }
+          steps{
+            sh '''
+             cat README.md
+            '''
+	  }
+	}
     }
 }
